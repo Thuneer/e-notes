@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination {
+  margin-top: 48px;
+}

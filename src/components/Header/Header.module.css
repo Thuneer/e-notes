@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  box-shadow: var(--fds-shadow-small);
+  background-color: white;
+}
+
+.right {
+  display: flex;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link svg {
+  margin-right: 2px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:visited {
+  color: inherit;
+}

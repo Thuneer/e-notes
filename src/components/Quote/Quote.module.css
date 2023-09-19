@@ -1,0 +1,22 @@
+.quote {
+  color: #333;
+  position: relative;
+  width: 390px;
+  margin: 0 auto;
+  padding: 40px;
+  font-family: 'Satisfy', sans-serif;
+  font-size: 30px;
+  box-shadow: 0 10px 10px 2px #d6d6d64d;
+  background: #eae672;
+  border-radius: 6px;
+}
+
+.author {
+  margin-top: 10px;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
