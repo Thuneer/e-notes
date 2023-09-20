@@ -3,9 +3,9 @@
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  width: 100%;
   background-color: var(--fds-semantic-background-subtle);
   color: var(--fds-semantic-text-neutral-default);
+  margin: 0;
 }
 
 * {

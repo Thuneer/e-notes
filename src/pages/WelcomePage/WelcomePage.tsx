@@ -1,9 +1,7 @@
 import React from 'react';
 
+import { Banner } from '../../components/Banner/Banner';
+
 export const WelcomePage = () => {
-  return (
-    <div>
-      <div>WelcomePage</div>
-    </div>
-  );
+  return <Banner />;
 };

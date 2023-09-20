@@ -1,46 +1,24 @@
-# Getting Started with Create React App
+# Sett opp firebase og firestore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Om du ønskjer å sette dette repoet opp lokalt, så må firebase og firestore settast opp.
 
-## Available Scripts
+- Gå til firebase console og lag eit nytt prosjekt.
+- Under `Get started by adding Firebase to your app`, trykk på `web` (</>) knappen og lag ein ny app.
+- Kopier firebaseConfig variablane inn i `src/firebase.ts` fila.
+- Trykk på `Authentication` og `Get Started`.
+- Velg `Email/Password` provideren og skru denne på. Trykk på `Save`.
+- Trykk på `Users` i tab menyen og legg til ein ny brukar med e-post og passord. Du kan bruke denne for å logge inn i react appen.
+- Gå tilbake til `Project Overview` og trykk på `Cloud Firestore`.
+- Trykk på `Create Database` og trykk `Next`.
+- Trykk `Enable` til slutt for å lage databasen.
+- Trykk på `Rules` tabben og bytt `allow read, write: if false;` til `allow read, write: if request.auth.uid != null;`. No vil innlogga brukarar få tilgang til å lese og skrive til databasen.
 
-In the project directory, you can run:
+# Lokal server
+
+### `npm install`
+
+Kjøyr denne kommandoen for å installere avhengigheitar.
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Kjøyr denne komamndoen for å starte lokal dev server på `http://localhost:3000`

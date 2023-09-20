@@ -1,5 +1,7 @@
 .list {
   margin-top: 48px;
+  text-align: left;
+  width: 100%;
 }
 
 .grid {

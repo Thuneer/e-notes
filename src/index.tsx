@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 import '@digdir/design-system-tokens/brand/digdir/tokens.css';
 import '@altinn/figma-design-tokens/dist/tokens.css';
-import './index.css';
 
 import store from './store/store';
 import App from './App';

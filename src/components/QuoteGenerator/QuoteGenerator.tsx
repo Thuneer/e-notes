@@ -10,10 +10,10 @@ import { collection, doc, setDoc } from 'firebase/firestore';
 
 import { getRandomQuote } from '../../services/quoteService';
 import { db } from '../../firebase';
-
-import classes from './QuoteGenerator.module.css';
 import { useAppDispatch } from '../../store/hooks';
 import { addQuote } from '../../store/reducers/quoteReducer';
+
+import classes from './QuoteGenerator.module.css';
 
 type QuoteType = {
   content: string;
@@ -54,6 +54,10 @@ export const QuoteGenerator = () => {
         >
           Generer nytt sitat
         </Heading>
+        <Paragraph spacing={true}>
+          Sitatet du generer vil vise til høgre. Trykk på lagre knappen om du
+          ønskjer å lagre sitatet til lista under.
+        </Paragraph>
         <Button onClick={() => onBtnClicked()}>Generer</Button>
       </div>
       <div className={classes.panel}>
@@ -64,8 +68,10 @@ export const QuoteGenerator = () => {
           color='secondary'
           onClick={() => onSaveClicked()}
         ></Button>
-        <Ingress size='medium'>{activeQuote.content}</Ingress>
-        <Paragraph className={classes.author}>{activeQuote.author}</Paragraph>
+        <div className={classes.quote}>
+          <Ingress size='medium'>{activeQuote.content}</Ingress>
+          <Paragraph className={classes.author}>{activeQuote.author}</Paragraph>
+        </div>
       </div>
     </div>
   );

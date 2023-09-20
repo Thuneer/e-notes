@@ -7,7 +7,7 @@
   font-family: 'Satisfy', sans-serif;
   font-size: 30px;
   box-shadow: 0 10px 10px 2px #d6d6d64d;
-  background: #eae672;
+  background: var(--fds-semantic-surface-warning-subtle-hover);
   border-radius: 6px;
 }
 
@@ -17,6 +17,6 @@
 
 .deleteBtn {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
 }

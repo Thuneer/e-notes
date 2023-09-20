@@ -8,6 +8,7 @@
 
 .right {
   display: flex;
+  align-items: center;
 }
 
 .link {
@@ -25,4 +26,8 @@
 
 .link:visited {
   color: inherit;
+}
+
+.user {
+  margin-right: 16px;
 }

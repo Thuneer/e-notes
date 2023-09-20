@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -6,6 +6,8 @@ import {
   TextField,
   Heading,
   ErrorMessage,
+  Alert,
+  Paragraph,
 } from '@digdir/design-system-react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -38,8 +40,9 @@ type ValuesType = {
 export const LoginForm = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const [firebaseAuthError, setFirbaseAuthError] = useState(false);
 
-  const onFormSubmit = async (values: ValuesType) => {
+  const tryToLoginUser = async (values: ValuesType) => {
     try {
       await signInWithEmailAndPassword(auth, values.email, values.password);
       dispatch(
@@ -50,23 +53,33 @@ export const LoginForm = () => {
       );
       navigate('/dashboard');
     } catch (e) {
-      console.log(e);
+      setFirbaseAuthError(true);
     }
   };
 
   return (
     <div className={classes.form}>
+      {firebaseAuthError && (
+        <Alert
+          severity='danger'
+          className={classes.alert}
+        >
+          <Paragraph>Feil brukernavn eller passord.</Paragraph>
+        </Alert>
+      )}
+
       <Heading
         level={1}
         size='small'
         className={classes.heading}
       >
-        Logg inn {auth.currentUser?.email}
+        Logg inn
       </Heading>
+
       <Formik
         initialValues={initialValues}
         validationSchema={LoginSchema}
-        onSubmit={(values) => onFormSubmit(values)}
+        onSubmit={(values) => tryToLoginUser(values)}
       >
         {({ errors, touched }) => (
           <Form>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
-import { Heading } from '@digdir/design-system-react';
+import { Heading, Paragraph } from '@digdir/design-system-react';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setQuotes } from '../../store/reducers/quoteReducer';
@@ -30,8 +30,11 @@ export const QuoteList = () => {
 
   return (
     <div className={classes.list}>
-      <Heading size='medium'>Mine lagrede sitater</Heading>
+      <Heading size='medium'>Mine lagra sitat</Heading>
       <div className={classes.grid}>
+        {quotes.quotes.length === 0 && (
+          <Paragraph>Du har ingen lagra sitat.</Paragraph>
+        )}
         {quotes.quotes.map((data, index) => (
           <Quote
             key={index}

@@ -1,8 +1,8 @@
 .panel {
   width: 50%;
   background-color: white;
-  border: 1px solid rgb(235, 235, 235);
-  padding: 60px;
+  border: 1px solid #ebebeb;
+  padding: 50px;
   position: relative;
 }
 
@@ -16,9 +16,6 @@
   margin-top: 48px;
 }
 
-.quote {
-}
-
 .author {
   margin-top: 16px;
   color: grey;
@@ -29,4 +26,9 @@
   top: 24px;
   right: 24px;
   color: grey;
+}
+
+.quote {
+  border-left: 6px solid var(--fds-brand-tertiary-600);
+  padding: 12px 24px;
 }

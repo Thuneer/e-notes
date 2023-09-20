@@ -1,8 +1,9 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
+import type { DocumentData } from 'firebase/firestore';
 
 type QuoteState = {
-  quotes: any[];
+  quotes: DocumentData[];
 };
 
 const initialState: QuoteState = {
@@ -16,10 +17,10 @@ export const quoteSlice = createSlice({
     setQuotes: (state, action: PayloadAction<QuoteState>) => {
       state.quotes = action.payload.quotes;
     },
-    addQuote: (state, action: PayloadAction<unknown>) => {
+    addQuote: (state, action: PayloadAction<DocumentData>) => {
       state.quotes = [...state.quotes, action.payload];
     },
-    deleteQuote: (state, action: PayloadAction<unknown>) => {
+    deleteQuote: (state, action: PayloadAction<string>) => {
       state.quotes = state.quotes.filter(
         (quote) => quote._id !== action.payload,
       );
