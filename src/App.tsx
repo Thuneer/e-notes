@@ -16,7 +16,6 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // When Auth changes we send the
     auth.onAuthStateChanged((user) => {
       if (user) {
         dispatch(

@@ -24,9 +24,8 @@ export const QuoteGenerator = () => {
   const dispatch = useAppDispatch();
 
   const [activeQuote, setActiveQuote] = useState<QuoteType>({
-    content:
-      'Great ideas often receive violent opposition from mediocre minds.',
-    author: 'Albert Einstein',
+    content: '',
+    author: '',
   });
   const onBtnClicked = async () => {
     const quote = await getRandomQuote();
@@ -41,8 +40,8 @@ export const QuoteGenerator = () => {
 
   useEffect(() => {
     (async () => {
-      const q = await getRandomQuote();
-      setActiveQuote(q);
+      const randomQuote = await getRandomQuote();
+      setActiveQuote(randomQuote);
     })();
   }, []);
   return (
