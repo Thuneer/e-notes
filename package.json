@@ -5,8 +5,8 @@
   "dependencies": {
     "@altinn/figma-design-tokens": "^6.0.1",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@digdir/design-system-react": "^0.24.1",
-    "@digdir/design-system-tokens": "^0.6.0",
+    "@digdir/design-system-react": "0.25.0",
+    "@digdir/design-system-tokens": "0.7.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

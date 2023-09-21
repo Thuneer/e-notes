@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import {
   Button,
-  TextField,
+  Textfield,
   Heading,
   ErrorMessage,
   Alert,
@@ -84,7 +84,7 @@ export const LoginForm = () => {
         {({ errors, touched }) => (
           <Form>
             <Field
-              as={TextField}
+              as={Textfield}
               name='email'
               label='E-post'
             />
@@ -99,7 +99,7 @@ export const LoginForm = () => {
             ) : null}
 
             <Field
-              as={TextField}
+              as={Textfield}
               name='password'
               label='Passord'
               type='password'
